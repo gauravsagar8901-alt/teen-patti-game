@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Teen Patti Game</title>
+  <style>
+    body { font-family: Arial; text-align: center; background: #006400; color: white; }
+    .card { display: inline-block; margin: 10px; padding: 20px; border: 1px solid white; border-radius: 10px; background: #228B22; }
+  </style>
+</head>
+<body>
+  <h1>Teen Patti</h1>
+  <div id="cards"></div>
+  <button onclick="dealCards()">Deal Cards</button>
+
+  <script>
+    const cards = ["A♠","2♠","3♠","4♠","5♠","6♠","7♠","8♠","9♠","10♠","J♠","Q♠","K♠"];
+    function dealCards() {
+      let hand = [];
+      for(let i=0;i<3;i++){
+        hand.push(cards[Math.floor(Math.random()*cards.length)]);
+      }
+      document.getElementById("cards").innerHTML = hand.map(c => `<div class='card'>${c}</div>`).join("");
+    }
+  </script>
+</body>
+</html>
